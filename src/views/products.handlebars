@@ -1,0 +1,34 @@
+<main>
+  {{> templates/nav}}
+  <h1 class="heading">Produtos</h1>
+  <form id="search-form" class="search-box">
+    <input type="text" id="search-input" placeholder="Pesquisar por categoria">
+    <button type="submit" class="button">Pesquisar</button>
+  </form>
+  {{#if noProducts}}
+    <p class="text-center mt1rem">Nenhum produto encontrado</p>
+  {{else}}
+    <div class="container mt1rem">
+      {{#each products}}
+        <div class="product box">
+          <h2>{{title}}</h2>
+          <p>Descrição: {{description}}</p>
+          <p>Preço: {{price}}</p>
+          <p>Categoria: {{category}}</p>
+          <p>Código: {{code}}</p>
+          <button class="button cart-button">{{> icons/cart}}</button>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+  <div class="mt1rem">
+    {{#if prevLink}}
+      <a href="{{prevLink}}" class="button">Anterior</a>
+    {{/if}}
+    <span>Página {{page}}</span>
+    {{#if nextLink}}
+      <a href="{{nextLink}}" class="button">Próximo</a>
+    {{/if}}
+  </div>
+</main>
+<script src="js/products.js" defer></script>

@@ -1,0 +1,29 @@
+{
+  "name": "coderhouse-backend",
+  "version": "0.0.1",
+  "description": "Projeto desenvolvido para o curso de backend da CoderHouse",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env src/app.js",
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "Guilherme Almeida",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-mongo": "^5.1.0",
+    "express": "^4.18.3",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.18.0",
+    "mongoose": "^8.3.0",
+    "mongoose-aggregate-paginate-v2": "^1.0.7",
+    "passport": "^0.7.0",
+    "passport-github2": "^0.1.12",
+    "passport-local": "^1.0.0",
+    "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "vitest": "^1.4.0"
+  }
+}

@@ -1,0 +1,268 @@
+* {
+    box-sizing: border-box;
+    color: #fff;
+}
+
+body {
+    font-family: monospace;
+}
+
+main {
+    color: #fff;
+    min-height: 100vh;
+    background: #351151;
+    background: linear-gradient(141deg,#351151 60%, #62159d 100%);
+    background: -webkit-linear-gradient(141deg,#351151 60%, #62159d 100%);
+    background: -moz-linear-gradient(141deg,#351151 60%, #62159d 100%);    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1.5rem;
+    justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1.5rem
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1.5rem
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 1.5rem
+    }
+}
+
+.search-box {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid #62159d;
+    border-radius: .5rem;
+    background-color: #340634;
+    color: #fff;
+}
+
+.button {
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #62159d;
+    border-radius: .5rem;
+    background-color: #340634;
+    color: #fff;
+    cursor: pointer;
+}
+
+.button:active {
+    outline: none;
+    background-color: #62159d;
+    opacity: 0.7;
+    transition: 300ms;
+}
+
+.product {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-height: 200px;
+    overflow: hidden;
+}
+
+.product p {
+    text-align:justify;
+}
+
+.cart-button {
+    opacity: 0.8;
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+}
+
+strong {
+    color: #3950e5;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.mt1rem {
+    margin-top: 1rem;
+}
+
+.m8rem {
+    margin: .8rem auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.box {
+    padding: 1rem;
+    border: 2px solid #62159d;
+    border-radius: .5rem;
+    background-color: #340634;
+}
+
+.heading {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 24px;
+}
+
+.system {
+    font-style: italic;
+    color: #555;
+}
+
+#users {
+    color: greenyellow;
+    padding-left: 1rem;
+    text-align: center;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.icon {
+    height: 24px;
+    width: 24px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 2px solid #62159d;
+    border-radius: .5rem;
+    background-color: #340634;
+}
+
+.login-form input {
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid #62159d;
+    border-radius: .5rem;
+    background-color: #340634;
+    color: #fff;
+}
+
+.input-group {
+    margin-top: 1rem;
+}
+
+.input-group label {
+    display: inline-block;
+    width: 5rem;
+}
+
+.login-form button {
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid #62159d;
+    border-radius: .5rem;
+    background-color: #340634;
+    color: #fff;
+    cursor: pointer;
+}
+
+.login-form button:active {
+    outline: none;
+    background-color: #62159d;
+    opacity: 0.7;
+    transition: 300ms;
+}
+
+#chatbox {
+    font-size: 1rem;
+    width: 100%;
+    background: none;
+    border: none;
+}
+
+#chatbox:focus {
+    outline: none;
+}
+
+#messages::-webkit-scrollbar {
+    display: none;
+}
+
+#messages {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.message {
+    word-break: break-all;
+}
+
+#send {
+    align-content: center;
+    text-align: center;
+    width: 100%;
+    margin: 0.5rem auto;
+    padding: 1rem .5rem;
+    font-size: 1rem;
+    border: 2px solid #62159d;
+    border-radius: .5rem;
+    background-color: #340634;
+    color: #fff;
+    cursor: pointer;
+}
+
+#send:active {
+    outline: none;
+    background-color: #62159d;
+    opacity: 0.7;
+    transition: 300ms;
+}

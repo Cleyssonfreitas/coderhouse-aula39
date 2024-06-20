@@ -1,0 +1,23 @@
+<main>
+  <nav class="navbar">
+    <span>email: {{user.email}}, role: {{user.role}}</span>
+    <a href="/logout" class="button">Sair</a>
+  </nav>
+  <h1 class="heading">Carrinho</h1>
+  {{#if noProducts}}
+    <p class="text-center mt1rem">Nenhum produto encontrado</p>
+  {{else}}
+    <div class="container mt1rem">
+      {{#each products}}
+        <div class="product box">
+          <h2>{{product.title}}</h2>
+          <p>Descrição: {{product.description}}</p>
+          <p>Preço: {{product.price}}</p>
+          <p>Categoria: {{product.category}}</p>
+          <p>Código: {{product.code}}</p>
+          <p>Quantidade: {{quantity}}</p>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+</main>

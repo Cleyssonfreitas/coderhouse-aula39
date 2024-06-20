@@ -1,0 +1,99 @@
+// Descomente a linha abaixo caso não tenha o arquivo http-client.env.json configurado
+#@HostAddress= http://localhost:8080
+
+@ProductId= 6615fc3dd9adfd4de76b2793
+@CartId= 6629d416a1dff24a0cda6d0e
+
+### GetProducts
+GET {{HostAddress}}/api/products
+
+### GetProductsLimited
+GET {{HostAddress}}/api/products?limit=1
+
+### GetProductsSortedByPrice
+GET {{HostAddress}}/api/products?sort=asc
+
+### GetProductsSortedByPriceDesc
+GET {{HostAddress}}/api/products?sort=desc
+
+### GetProductsSortedByPriceDescLimited
+GET {{HostAddress}}/api/products?sort=desc&limit=1
+
+### AddInvalidProduct
+// Deve retornar status 400
+POST {{HostAddress}}/api/products
+Content-Type: application/json
+
+{
+  "title": "",
+  "description": "Description 1",
+  "code": "P1",
+  "price": 100,
+  "status": true,
+  "stock": 10,
+  "category": "Category 1"
+}
+
+### AddProduct
+POST {{HostAddress}}/api/products
+Content-Type: application/json
+
+{
+  "title": "Product 9",
+  "description": "Description for product 9",
+  "code": "p89i0",
+  "price": 199,
+  "stock": 20,
+  "category": "Category 2"
+}
+
+### UpdateProduct
+PUT {{HostAddress}}/api/products/{{ProductId}}
+Content-Type: application/json
+
+{
+  "title": "Produto atualizado",
+  "description": "Milhoes de produtos vendidos. Aproveite!",
+  "code": "P8888",
+  "price": 300
+}
+
+### DeleteProduct
+DELETE {{HostAddress}}/api/products/{{ProductId}}
+
+
+### GetProduct
+GET {{HostAddress}}/api/products/{{ProductId}}
+
+### AddCart
+POST {{HostAddress}}/api/carts
+
+### GetCart
+GET {{HostAddress}}/api/carts/{{CartId}}
+
+### UpdateCart
+PUT {{HostAddress}}/api/carts/{{CartId}}
+Content-Type: application/json
+
+{
+  "products": [
+    {
+      "product": "{{ProductId}}",
+      "quantity": 1
+    }
+  ]
+}
+
+### AddProductToCart
+POST {{HostAddress}}/api/carts/{{CartId}}/product/{{ProductId}}
+
+### AddProductToCartWithQuantity
+POST {{HostAddress}}/api/carts/{{CartId}}/product/{{ProductId}}
+Content-Type: application/json
+
+{
+  "quantity": 2
+}
+
+### RemoveProductsFromCart
+DELETE {{HostAddress}}/api/carts/{{CartId}}

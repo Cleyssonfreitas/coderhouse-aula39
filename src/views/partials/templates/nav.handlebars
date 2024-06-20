@@ -1,0 +1,9 @@
+<nav class="navbar">
+  {{#if user}}
+    <span>email: {{user.email}}, role: {{user.role}}</span>
+    <a href="/logout" class="button">Sair</a>
+  {{else}}
+    <a href="/login" class="button">Entrar</a>
+    <a href="/signup" class="button">Registrar</a>
+  {{/if}}
+</nav>
