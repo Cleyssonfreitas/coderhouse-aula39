@@ -1,17 +1,26 @@
-import swaggerJSDoc from 'swagger-jsdoc';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const swaggerOptions = {
-  definition: {
-    openapi: '3.0.0', // Especifique a versão do OpenAPI que deseja utilizar
-    info: {
-      title: 'Documentação da API', // Título da sua API
-      version: '1.0.0', // Versão da sua API
-      description: 'Documentação da API para o projeto de programação',
-    },
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+const swaggerDefinition = {
+  openapi: '3.0.0',
+  info: {
+    title: 'API Documentation',
+    version: '1.0.0',
+    description: 'API documentation for your application',
   },
-  apis: ['./src/routes/*.js'], // Caminho para os arquivos que contêm as rotas a serem documentadas
+  servers: [
+    {
+      url: 'http://localhost:8080',
+      description: 'Development server',
+    },
+  ],
 };
 
-const swaggerSpec = swaggerJSDoc(swaggerOptions);
+const options = {
+  swaggerDefinition,
+  apis: [join(__dirname, '../routes/*.js')], // Caminho para os arquivos de rotas
+};
 
-export default swaggerSpec;
+export default options;
