@@ -5,8 +5,8 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { createServer } from 'node:http';
 import swaggerUi from 'swagger-ui-express';
-import swaggerJsdoc from 'swagger-jsdoc'; // Importe swagger-jsdoc
-import swaggerOptions from './config/swaggerConfig.js'; // Importe a configuração do Swagger
+import swaggerJsdoc from 'swagger-jsdoc'; 
+import swaggerOptions from './config/swaggerConfig.js'; 
 
 import cartRouter from './routes/cart.router.js';
 import productRouter from './routes/product.router.js';
@@ -61,7 +61,7 @@ app.use('/api/carts', cartRouter);
 app.use('/api/products', productRouter);
 app.use('/', loggerTestRouter);
 
-const swaggerSpec = swaggerJsdoc(swaggerOptions); // Gera a especificação Swagger
+const swaggerSpec = swaggerJsdoc(swaggerOptions); 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 server.listen(8080, () => {

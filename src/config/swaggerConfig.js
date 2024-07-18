@@ -20,7 +20,7 @@ const swaggerDefinition = {
 
 const options = {
   swaggerDefinition,
-  apis: [join(__dirname, '../routes/*.js')], // Caminho para os arquivos de rotas
+  apis: [join(__dirname, '../routes/*.js')], 
 };
 
 export default options;
